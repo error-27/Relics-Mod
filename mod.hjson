@@ -5,7 +5,7 @@ displayName: "Relics"
 name: "relics-mod"
 
 #your name
-author: "Error-in-Code"
+author: "[Error_in_Code]"
 
 #the fully qualified main class of the mod
 main: "relics.RelicsMod"

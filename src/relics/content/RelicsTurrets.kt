@@ -33,9 +33,28 @@ class RelicsTurrets : ContentList {
             inaccuracy = 1.5f
             rotateSpeed = 10f
         }
+
+        stream = object : ItemTurret("stream"){}.apply {
+            localizedName = "Stream"
+            description = "Fires many bullets very quickly."
+            requirements(Category.turret, with(Items.copper, 30, Items.lead, 45))
+            range = 148f
+            reloadTime = 7f
+            ammo(Items.lead, Bullets.standardCopper) // May add new bullet later. Original bullet was the same as Stone but faster.
+            shots = 1
+            spread = 4f
+            shootCone = 17f
+            ammoUseEffect = Fx.casing1
+            alternate = false
+            restitution = 0.02f
+            health = 280
+            inaccuracy = 2.8f
+            rotateSpeed = 8f
+        }
     }
 
     companion object{
         lateinit var solo: Block
+        lateinit var stream: Block
     }
 }
