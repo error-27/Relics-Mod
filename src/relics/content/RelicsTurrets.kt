@@ -51,10 +51,28 @@ class RelicsTurrets : ContentList {
             inaccuracy = 2.8f
             rotateSpeed = 8f
         }
+
+        split = object : ItemTurret("split"){}.apply {
+            localizedName = "Split"
+            description = "Fires a spread of 7 bullets. Lower range but higher damage output than [gold]Stream."
+            requirements(Category.turret, with(Items.copper, 45, Items.lead, 55))
+            range = 100f
+            reloadTime = 30f
+            ammo(Items.lead, Bullets.standardCopper)
+            shots = 7
+            spread = 6f
+            shootCone = 17f
+            ammoUseEffect = Fx.casing3
+            alternate = false
+            health = 280
+            inaccuracy = 2.0f
+            rotateSpeed = 8f
+        }
     }
 
     companion object{
         lateinit var solo: Block
         lateinit var stream: Block
+        lateinit var split: Block
     }
 }
