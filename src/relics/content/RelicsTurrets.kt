@@ -15,7 +15,7 @@ class RelicsTurrets : ContentList {
 
         solo = object : ItemTurret("solo"){}.apply {
             localizedName = "Solo"
-            description = "Fires single bullets at enemies, with a farther range than [yellow]Duo."
+            description = "Fires single bullets at enemies, with a farther range than [gold]Duo."
             requirements(Category.turret, with(Items.copper, 35), true)
             range = 130f
             reloadTime = 22f
