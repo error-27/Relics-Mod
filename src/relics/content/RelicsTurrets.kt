@@ -14,6 +14,8 @@ class RelicsTurrets : ContentList {
     override fun load() {
 
         solo = object : ItemTurret("solo"){}.apply {
+            localizedName = "Solo"
+            description = "Fires single bullets at enemies, with a farther range than [yellow]Duo."
             requirements(Category.turret, with(Items.copper, 35), true)
             range = 130f
             reloadTime = 22f
@@ -30,8 +32,6 @@ class RelicsTurrets : ContentList {
             health = 250
             inaccuracy = 1.5f
             rotateSpeed = 10f
-
-            limitRange()
         }
     }
 
