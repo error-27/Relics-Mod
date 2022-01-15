@@ -58,7 +58,7 @@ class RelicsTurrets : ContentList {
             requirements(Category.turret, with(Items.copper, 45, Items.lead, 55))
             range = 100f
             reloadTime = 30f
-            ammo(Items.lead, Bullets.standardCopper)
+            ammo(Items.lead, Bullets.standardCopper) // May add new bullet later. Original bullet same as in Stream
             shots = 7
             spread = 6f
             shootCone = 17f
