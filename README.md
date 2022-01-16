@@ -1,30 +1,47 @@
-# Mindustry Kotlin Mod Template
-A Kotlin Mindustry mod that works on Android and PC. This is equivalent to the [Java](https://github.com/Anuken/ExampleJavaMod) version, except in Kotlin.
+# Relics
+Relics is a Mindustry mod adding lost content from Mindustry Classic that was removed in updates.
+This is mainly turrets, as most other removed content has equivalents in the current game.
 
-## Building for Desktop Testing
+## Additions:
+### Turrets:
 
-1. Install JDK 14. If you don't know how, look it up. If you already have any version of the JDK >= 8, that works as well. 
-2. Run `gradlew jar` [1].
-3. Your mod jar will be in the `build/libs` directory. **Only use this version for testing on desktop. It will not work with Android.**
-To build an Android-compatible version, you need the Android SDK. You can either let Github Actions handle this, or set it up yourself. See steps below.
+![Solo](https://github.com/Error-In-Code/Relics-Mod/blob/master/assets/sprites/blocks/solo.png?raw=true) 
+Solo, a modern version of the Turret from Mindustry Classic
 
-## Building through Github Actions
+Solo only shoots out of one barrel and has a slower fire rate than Duo, but it has a higher range.
 
-This repository is set up with Github Actions CI to automatically build the mod for you every commit. This requires a Github repository, for obvious reasons.
-To get a jar file that works for every platform, do the following:
-1. Make a Github repository with your mod name, and upload the contents of this repo to it. Perform any modifications necessary, then commit and push. 
-2. Check the "Actions" tab on your repository page. Select the most recent commit in the list. If it completed successfully, there should be a download link under the "Artifacts" section. 
-3. Click the download link (should be the name of your repo). This will download a **zipped jar** - **not** the jar file itself [2]! Unzip this file and import the jar contained within in Mindustry. This version should work both on Android and Desktop.
+![Stream](https://github.com/Error-In-Code/Relics-Mod/blob/master/assets/sprites/blocks/stream.png?raw=true)
+Stream, a modern version of the Gattling Turret from Mindustry Classic
 
-## Building Locally
+Stream fires bullets very fast and has good range, but shots are slightly more inaccurate.
 
-Building locally takes more time to set up, but shouldn't be a problem if you've done Android development before.
-1. Download the Android SDK, unzip it and set the `ANDROID_HOME` environment variable to its location.
-2. Make sure you have API level 30 installed, as well as any recent version of build tools (e.g. 30.0.1)
-3. Add a build-tools folder to your PATH. For relics, if you have `30.0.1` installed, that would be `$ANDROID_HOME/build-tools/30.0.1`.
-4. Run `gradlew deploy`. If you did everything correctlly, this will create a jar file in the `build/libs` directory that can be run on both Android and desktop. 
+![Split](https://github.com/Anuken/Mindustry/blob/master/core/assets/sprites/error.png?raw=true)
+Split, a modern version of the Splitter Turret from Mindustry Classic.
 
---- 
+Split fires 7 bullets in a spread. It has high damage but limited range.
 
-*[1]* *On Linux/Mac it's `./gradlew`, but if you're using Linux I assume you know how to run executables properly anyway.*  
-*[2]: Yes, I know this is stupid. It's a Github UI limitation - while the jar itself is uploaded unzipped, there is currently no way to download it as a single file.*
+## Changes to Originals
+Due to the large number of changes to Mindustry since v3.5, also known as Mindustry Classic, a lot had to be inferred about how these turrets would look today.
+There also have been changes to stat spread across the whole game, giving everything more overall health and damage, so those stats have also been inferred.
+Due to this, some turrets may need to be re-balanced in the future or might undergo changes. Some turrets have also been given a new place in progression due to changes to materials since v3.5.
+The stats are based on turrets that weren't deleted in the v4.0 and the general part of game progression you would unlock them in.
+
+## Things That Weren't Added
+Although many things were deleted in v4.0, not everything was lost. Some turrets still live on today in new forms.
+### Turrets:
+Turrets that won't be added because they already exist.
+
+![Duo](https://github.com/Anuken/Mindustry/blob/master/core/assets-raw/sprites/blocks/turrets/duo.png?raw=true)
+Double Turret already exists in the form of Duo
+
+![Hail](https://github.com/Anuken/Mindustry/blob/master/core/assets-raw/sprites/blocks/turrets/hail.png?raw=true)
+Railgun Turret already exists in the form of Hail
+
+![Scorch](https://github.com/Anuken/Mindustry/blob/master/core/assets-raw/sprites/blocks/turrets/scorch.png?raw=true)
+Flamer Turret already exists in the form of Scorch
+
+![Lancer](https://github.com/Anuken/Mindustry/blob/master/core/assets-raw/sprites/blocks/turrets/lancer.png?raw=true)
+Laser Turret already exists in the form of Lancer, albeit with slightly different mechanics
+
+![Arc](https://github.com/Anuken/Mindustry/blob/master/core/assets-raw/sprites/blocks/turrets/arc.png?raw=true)
+Tesla Turret already exists in the form of Arc
