@@ -4,6 +4,7 @@ import mindustry.content.Bullets
 import mindustry.content.Fx
 import mindustry.content.Items
 import mindustry.ctype.ContentList
+import mindustry.gen.Sounds
 import mindustry.type.Category
 import mindustry.world.Block
 import mindustry.world.blocks.defense.turrets.ItemTurret
@@ -40,7 +41,7 @@ class RelicsTurrets : ContentList {
             requirements(Category.turret, with(Items.copper, 30, Items.lead, 45))
             range = 148f
             reloadTime = 7f
-            ammo(Items.lead, Bullets.standardCopper) // May add new bullet later. Original bullet was the same as Stone but faster.
+            ammo(Items.lead, RelicsBullets.standardCopperFast)
             shots = 1
             spread = 4f
             shootCone = 17f
@@ -58,7 +59,7 @@ class RelicsTurrets : ContentList {
             requirements(Category.turret, with(Items.copper, 45, Items.lead, 55))
             range = 100f
             reloadTime = 30f
-            ammo(Items.lead, Bullets.standardCopper) // May add new bullet later. Original bullet same as in Stream
+            ammo(Items.lead, RelicsBullets.standardCopperFast)
             shots = 7
             spread = 6f
             shootCone = 17f
@@ -68,11 +69,30 @@ class RelicsTurrets : ContentList {
             inaccuracy = 2.0f
             rotateSpeed = 8f
         }
+
+        incinerate = object : ItemTurret("incinerate"){}.apply {
+            localizedName = "Incinerate"
+            description = "Advanced version of [gold]Scorch[white]. Very high damage, low to medium range."
+            health = 440
+            ammo(Items.coal, RelicsBullets.flameHot,
+                Items.pyratite, RelicsBullets.pyraFlameHot)
+            requirements(Category.turret, with(Items.graphite, 70, Items.titanium, 85))
+            shots = 1
+            range = 75f
+            inaccuracy = 4f
+            rotateSpeed = 8f
+            recoilAmount = 0f
+            targetAir = false
+            reloadTime = 6f
+            shootEffect = Fx.none
+            shootSound = Sounds.flame2
+        }
     }
 
     companion object{
         lateinit var solo: Block
         lateinit var stream: Block
         lateinit var split: Block
+        lateinit var incinerate: Block
     }
 }

@@ -15,6 +15,8 @@ class RelicsMod : Mod(){
 
     override fun loadContent(){
         Log.info("Loading Relics content.")
+        RelicsBullets().load()
         RelicsTurrets().load()
+        Log.info("Content loaded!")
     }
 }

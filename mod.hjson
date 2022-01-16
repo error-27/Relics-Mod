@@ -14,7 +14,7 @@ main: "relics.RelicsMod"
 description: "A Mindustry mod adding turrets from Mindustry Classic back into the game."
 
 #the mod version
-version: 0.1
+version: 0.2
 
 #the minimum game build required to run this mod
 minGameVersion: 126
