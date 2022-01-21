@@ -1,4 +1,5 @@
-# Relics
+![Logo](https://github.com/Error-In-Code/Relics-Mod/blob/master/assets/sprites-override/ui/logo.png?raw=true)
+
 Relics is a Mindustry mod adding lost content from Mindustry Classic that was removed in updates.
 This is mainly turrets, as most other removed content has equivalents in the current game.
 
