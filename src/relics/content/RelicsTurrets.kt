@@ -104,7 +104,8 @@ class RelicsTurrets : ContentList {
             targetAir = false
             reloadTime = 6f
             shootEffect = Fx.none
-            shootSound = Sounds.flame2
+            shootSound = Sounds.flame
+            size = 2
         }
     }
 
