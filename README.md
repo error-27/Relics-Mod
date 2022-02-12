@@ -2,6 +2,8 @@
 
 Relics is a Mindustry mod adding lost content from Mindustry Classic that was removed in updates.
 This is mainly turrets, as most other removed content has equivalents in the current game.
+### Demo Video:
+[![Demo Vid](http://img.youtube.com/vi/B9S3DZDPhLw/0.jpg)](http://www.youtube.com/watch?v=B9S3DZDPhLw)
 
 ## Additions:
 ### Turrets:
