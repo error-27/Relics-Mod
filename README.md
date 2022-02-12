@@ -16,10 +16,20 @@ Stream, a modern version of the Gattling Turret from Mindustry Classic
 
 Stream fires bullets very fast and has good range, but shots are slightly more inaccurate.
 
-![Split](https://github.com/Anuken/Mindustry/blob/master/core/assets/sprites/error.png?raw=true)
+![Split](https://github.com/Error-In-Code/Relics-Mod/blob/master/assets/sprites/blocks/split.png?raw=true)
 Split, a modern version of the Splitter Turret from Mindustry Classic.
 
 Split fires 7 bullets in a spread. It has high damage but limited range.
+
+![Incinerate](https://github.com/Error-In-Code/Relics-Mod/blob/master/assets/sprites/blocks/incinerate.png?raw=true)
+Incinerate, a modern version of the Plasma Turret from Mindustry Classic.
+
+Incinerate fires a high-damage stream of fire, but has a low range.
+
+![Fragment](https://github.com/Error-In-Code/Relics-Mod/blob/master/assets/sprites/blocks/fragment.png?raw=true)
+Fragment, a modern version of the Flak Turret from Mindustry Classic.
+
+Fragment fires 3 bullets that explode into flak. It has low accuracy but is good for large clumps of enemies.
 
 ## Changes to Originals
 Due to the large number of changes to Mindustry since v3.5, also known as Mindustry Classic, a lot had to be inferred about how these turrets would look today.
