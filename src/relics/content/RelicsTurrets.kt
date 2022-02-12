@@ -64,6 +64,8 @@ class RelicsTurrets : ContentList {
             spread = 6f
             shootCone = 17f
             ammoUseEffect = Fx.casing3
+            ammoEjectBack = 1.7f;
+            recoilAmount = 1.3f;
             alternate = false
             health = 280
             inaccuracy = 2.0f
@@ -79,6 +81,7 @@ class RelicsTurrets : ContentList {
             spread = 9f
             shootCone = 5f
             ammoUseEffect = Fx.casing3
+            ammoEjectBack = 1.5f;
             inaccuracy = 9f
             targetAir = false
             reloadTime = 55f
@@ -87,6 +90,8 @@ class RelicsTurrets : ContentList {
             shootSound = Sounds.bigshot
             shootEffect = Fx.shootBig
             requirements(Category.turret, with(Items.graphite, 120, Items.titanium, 130))
+            size = 2;
+            recoilAmount = 2.0f;
         }
 
         incinerate = object : ItemTurret("incinerate"){}.apply {
