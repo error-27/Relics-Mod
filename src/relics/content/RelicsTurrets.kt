@@ -64,10 +64,34 @@ class RelicsTurrets : ContentList {
             spread = 6f
             shootCone = 17f
             ammoUseEffect = Fx.casing3
+            ammoEjectBack = 1.7f;
+            recoilAmount = 1.3f;
             alternate = false
             health = 280
             inaccuracy = 2.0f
             rotateSpeed = 8f
+        }
+
+        fragment = object : ItemTurret("fragment"){}.apply {
+            localizedName = "Fragment"
+            description = "Shoots bullets that explode into shrapnel."
+            health = 310
+            ammo(Items.coal, RelicsBullets.fragmentBullet)
+            shots = 3
+            spread = 9f
+            shootCone = 5f
+            ammoUseEffect = Fx.casing3
+            ammoEjectBack = 1.5f;
+            inaccuracy = 9f
+            targetAir = false
+            reloadTime = 55f
+            shootShake = 2f
+            range = 220f
+            shootSound = Sounds.bigshot
+            shootEffect = Fx.shootBig
+            requirements(Category.turret, with(Items.graphite, 120, Items.titanium, 130))
+            size = 2;
+            recoilAmount = 2.0f;
         }
 
         incinerate = object : ItemTurret("incinerate"){}.apply {
@@ -85,7 +109,8 @@ class RelicsTurrets : ContentList {
             targetAir = false
             reloadTime = 6f
             shootEffect = Fx.none
-            shootSound = Sounds.flame2
+            shootSound = Sounds.flame
+            size = 2
         }
     }
 
@@ -93,6 +118,7 @@ class RelicsTurrets : ContentList {
         lateinit var solo: Block
         lateinit var stream: Block
         lateinit var split: Block
+        lateinit var fragment: Block
         lateinit var incinerate: Block
     }
 }
