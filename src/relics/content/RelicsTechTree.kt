@@ -5,17 +5,16 @@ import mindustry.content.Blocks
 import mindustry.content.Items
 import mindustry.content.TechTree
 import mindustry.content.TechTree.TechNode
-import mindustry.ctype.ContentList
 import mindustry.ctype.UnlockableContent
 import mindustry.game.Objectives
 import mindustry.type.ItemStack
 
-class RelicsTechTree : ContentList {
+class RelicsTechTree {
     companion object{
         public var context: TechNode? = null;
     }
 
-    override fun load() {
+    fun load() {
         createNode(Blocks.duo, ) { node(RelicsTurrets.solo) {node(RelicsTurrets.stream)} }
         createNode(Blocks.scorch) {node(RelicsTurrets.incinerate, Seq.with(Objectives.Produce(Items.pyratite)))}
         createNode(Blocks.scatter) {node(RelicsTurrets.fragment); node(RelicsTurrets.split)}
@@ -58,7 +57,7 @@ class RelicsTechTree : ContentList {
     }
 
     private fun nodeProduce(content: UnlockableContent, objectives: Seq<Objectives.Objective>?, children: Runnable): TechNode{
-        return node(content, content.researchRequirements(), objectives?.and(Objectives.Produce(content)), children)
+        return node(content, content.researchRequirements(), objectives?.add(Objectives.Produce(content)), children)
     }
 
     private fun nodeProduce(content: UnlockableContent, children: Runnable): TechNode{

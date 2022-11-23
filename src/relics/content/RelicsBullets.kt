@@ -2,13 +2,12 @@ package relics.content
 
 import mindustry.content.Fx
 import mindustry.content.StatusEffects
-import mindustry.ctype.ContentList
 import mindustry.entities.bullet.BasicBulletType
 import mindustry.entities.bullet.BulletType
 import mindustry.entities.bullet.FlakBulletType
 
-class RelicsBullets : ContentList {
-    override fun load() {
+class RelicsBullets {
+    fun load() {
         standardCopperFast = object : BasicBulletType(2.5f, 11f){}.apply {
             width = 7f
             height = 9f

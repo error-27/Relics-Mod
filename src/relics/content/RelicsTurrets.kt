@@ -1,35 +1,49 @@
 package relics.content
 
-import mindustry.content.Bullets
-import mindustry.content.Fx
-import mindustry.content.Items
-import mindustry.ctype.ContentList
+import mindustry.content.*
+import mindustry.entities.bullet.BasicBulletType
 import mindustry.gen.Sounds
 import mindustry.type.Category
 import mindustry.world.Block
 import mindustry.world.blocks.defense.turrets.ItemTurret
 import mindustry.type.ItemStack.with;
 
-class RelicsTurrets : ContentList {
+class RelicsTurrets {
 
-    override fun load() {
+    fun load() {
 
         solo = object : ItemTurret("solo"){}.apply {
             localizedName = "Solo"
             description = "Fires single bullets at enemies, with a farther range than [gold]Duo."
             requirements(Category.turret, with(Items.copper, 35), true)
             range = 130f
-            reloadTime = 22f
-            ammo(Items.copper, Bullets.standardCopper,
-                Items.graphite, Bullets.standardDense,
-                Items.pyratite, Bullets.standardIncendiary,
-                Items.silicon, Bullets.standardHoming)
-            shots = 1
-            spread = 2f
+            reload = 22f
+            ammo(
+                Items.copper, BasicBulletType(2.5f, 9f).apply{
+                    width = 7f
+                    height = 9f
+                    lifetime = 60f
+                    ammoMultiplier = 2f
+                },
+                Items.graphite, BasicBulletType(3.5f, 18f).apply{
+                    width = 9f
+                    height = 12f
+                    lifetime = 60f
+                    ammoMultiplier = 4f
+                    reloadMultiplier = .6f
+                },
+                Items.silicon, BasicBulletType(3f, 12f).apply{
+                    width = 7f
+                    height = 9f
+                    lifetime = 60f
+                    homingPower = .1f
+                    reloadMultiplier = 1.5f
+                    ammoMultiplier = 5f
+                })
+            shoot.shots = 1
             shootCone = 10f
+            shootY = 3f
             ammoUseEffect = Fx.casing1
-            alternate = false
-            restitution = 0.03f
             health = 250
             inaccuracy = 1.5f
             rotateSpeed = 10f
@@ -40,14 +54,12 @@ class RelicsTurrets : ContentList {
             description = "Fires many bullets very quickly."
             requirements(Category.turret, with(Items.copper, 30, Items.lead, 45))
             range = 148f
-            reloadTime = 7f
+            reload = 7f
             ammo(Items.lead, RelicsBullets.standardCopperFast)
-            shots = 1
-            spread = 4f
+            shoot.shots = 1
             shootCone = 17f
+            shootY = 3f
             ammoUseEffect = Fx.casing1
-            alternate = false
-            restitution = 0.02f
             health = 280
             inaccuracy = 2.8f
             rotateSpeed = 8f
@@ -58,15 +70,15 @@ class RelicsTurrets : ContentList {
             description = "Fires a spread of 7 bullets. Lower range but higher damage output than [gold]Stream."
             requirements(Category.turret, with(Items.copper, 45, Items.lead, 55))
             range = 100f
-            reloadTime = 30f
+            reload = 30f
             ammo(Items.lead, RelicsBullets.standardCopperFast)
-            shots = 7
-            spread = 6f
-            shootCone = 17f
+            shoot.shots = 7
+//            spread = 6f
+            shootCone = 45f
             ammoUseEffect = Fx.casing3
             ammoEjectBack = 1.7f;
-            recoilAmount = 1.3f;
-            alternate = false
+            recoil = 1.3f;
+//            alternate = false
             health = 280
             inaccuracy = 2.0f
             rotateSpeed = 8f
@@ -77,21 +89,21 @@ class RelicsTurrets : ContentList {
             description = "Shoots bullets that explode into shrapnel."
             health = 310
             ammo(Items.coal, RelicsBullets.fragmentBullet)
-            shots = 3
-            spread = 9f
-            shootCone = 5f
+            shoot.shots = 3
+//            spread = 9f
+            shootCone = 20f
             ammoUseEffect = Fx.casing3
             ammoEjectBack = 1.5f;
             inaccuracy = 9f
             targetAir = false
-            reloadTime = 55f
-            shootShake = 2f
+            reload = 55f
+            shake = 2f
             range = 220f
             shootSound = Sounds.bigshot
             shootEffect = Fx.shootBig
             requirements(Category.turret, with(Items.graphite, 120, Items.titanium, 130))
             size = 2;
-            recoilAmount = 2.0f;
+            recoil = 2.0f;
         }
 
         incinerate = object : ItemTurret("incinerate"){}.apply {
@@ -101,15 +113,16 @@ class RelicsTurrets : ContentList {
             ammo(Items.coal, RelicsBullets.flameHot,
                 Items.pyratite, RelicsBullets.pyraFlameHot)
             requirements(Category.turret, with(Items.graphite, 70, Items.titanium, 85))
-            shots = 1
+            shoot.shots = 1
             range = 75f
             inaccuracy = 4f
             rotateSpeed = 8f
-            recoilAmount = 0f
+            recoil = 0f
             targetAir = false
-            reloadTime = 6f
+            reload = 6f
             shootEffect = Fx.none
             shootSound = Sounds.flame
+            shootCone = 50f
             size = 2
         }
     }

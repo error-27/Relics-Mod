@@ -5,7 +5,7 @@ displayName: "Relics"
 name: "relics-mod"
 
 #your name
-author: "[Error_in_Code]"
+author: "[Error_27]"
 
 #the fully qualified main class of the mod
 main: "relics.RelicsMod"
@@ -17,4 +17,4 @@ description: "A Mindustry mod adding turrets from Mindustry Classic back into th
 version: 0.2
 
 #the minimum game build required to run this mod
-minGameVersion: 126
+minGameVersion: 140.2
