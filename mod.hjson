@@ -17,4 +17,4 @@ description: "A Mindustry mod adding turrets from Mindustry Classic back into th
 version: 0.2
 
 #the minimum game build required to run this mod
-minGameVersion: 140.2
+minGameVersion: 136
